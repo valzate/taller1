@@ -39,11 +39,43 @@ class ListaDoble {
             this.tail = nuevoNodo;
         }        
     }
+// Insertar en un índice específico
+    insertarEnIndice(dato, indice) {
+        if (indice < 0 || indice > this.longitud) {
+            console.error("Índice fuera de rango");
+            return;
+        }
 
+        const nuevoNodo = new Nodo(dato);
+
+        if (indice === 0) {
+            this.agregarAlInicio(dato);
+            return;
+        }
+
+        if (indice === this.longitud) {
+            this.agregarAlFinal(dato);
+            return;
+        }
+
+        let actual = this.head;
+        for (let i = 0; i < indice; i++) {
+            actual = actual.siguiente;
+        }
+
+        nuevoNodo.siguiente = actual;
+        nuevoNodo.anterior = actual.anterior;
+        actual.anterior.siguiente = nuevoNodo;
+        actual.anterior = nuevoNodo;
+        this.longitud++;
+    }
 }
+
 
 const lista = new ListaDoble();// Creación de una instancia de ListaDoble y agregar un nodo al inicio
 lista.agregarAlInicio(10); // Se agrega un nodo al inicio de la lista doble
 console.log("El dato del primer nodo es:", lista.head.dato); // Verificamos el dato del primer nodo
 lista.agregarAlFinal(20); // Se agrega un nodo al final de la lista doble
 console.log("El dato del segundo nodo es:", lista.tail.dato); // Verificamos el dato del segundo nodo
+lista.insertarEnIndice(15, 1); // Insertamos un nodo con dato 15 en el índice 1
+console.log("El dato del nodo en el índice 1 es:", lista.head.siguiente.dato); // Verificamos el dato del nodo en el índice 1
