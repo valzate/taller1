@@ -167,3 +167,11 @@ de los datos crece. Esto es especialmente importante en aplicaciones que manejan
 lo que permite optimizar el código y mejorar la experiencia del usuario.
 °Comparación: Proporciona una base para comparar diferentes algoritmos y estructuras 
 de datos, ayudando a tomar decisiones informadas sobre cuál utilizar en un contexto particular.
+ANALISIS DE COMPLEJIDAD
+las operaciones agregarAlInicio(), agregarAlFinal(), eliminarPrimerNodo()
+y eliminarUltimoNodo() son ejemplos de operaciones O(1). Ya que estas operaciones
+no dependen del tamaño de la lista, sino que simplemente actualizan los punteros.
+Siempre toma la misma cantidad de tiempo, sin importar cuántos elementos haya.
+Y las operaciones insertarEnIndice() y eliminarEnIndice() son ejemplos de operaciones O(n).
+Esto se debe a que, en el peor de los casos, estas operaciones pueden requerir recorrer 
+parte de la lista para encontrar la posición correcta.*/
