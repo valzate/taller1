@@ -140,3 +140,30 @@ lista.eliminarEnIndice(0);// Eliminar el nodo en el índice 0
 console.log("Lista después de eliminar el nodo en el índice 0 es:", lista.head ? lista.head.dato : "La lista está vacía"); // Verificamos el nuevo primer nodo
 lista.eliminarUltimoNodo();// Eliminar el último nodo
 console.log("Lista después de eliminar el último nodo es:", lista.tail ? lista.tail.dato : "La lista está vacía"); // Verificamos el nuevo último nodo
+/* ANALISIS DE COMPLEJIDAD
+-¿Qué es la notación Big O?
+La notación Big O es una forma de medir la complejidad temporal y espacial de un algoritmo. 
+Se utiliza para describir cómo el tiempo de ejecución o el uso de memoria de un algoritmo 
+crece en relación con el tamaño de la entrada. Es especialmente útil para comparar la eficiencia 
+de diferentes algoritmos, ya que proporciona una forma de clasificar su rendimiento en función 
+del tamaño de los datos.
+-¿Cual es la idferencia entre O(1), O(n)?
+O(1):
+Se conoce como complejidad constante. Esto significa que el tiempo de ejecución del algoritmo 
+no cambia, independientemente del tamaño de la entrada. Por ejemplo, acceder a un elemento en 
+un array por su índice es una operación O(1).
+O(n):
+Se conoce como complejidad lineal. En este caso, el tiempo de ejecución aumenta linealmente 
+con el tamaño de la entrada. Por ejemplo, recorrer todos los elementos de una lista para 
+encontrar un valor específico es una operación O(n), ya que en el peor de los casos, se 
+debe revisar cada elemento.
+-¿Por qué es importante comprender la notación Big O al enseñar algoritmos?
+Entender la notación Big O es crucial por varias razones:
+°Eficiencia: Permite a los desarrolladores elegir el algoritmo más eficiente para un 
+problema específico, lo que puede tener un gran impacto en el rendimiento de la aplicación.
+°Escalabilidad: Ayuda a prever cómo un algoritmo se comportará a medida que el tamaño 
+de los datos crece. Esto es especialmente importante en aplicaciones que manejan grandes volúmenes de datos.
+°Optimización: Facilita la identificación de cuellos de botella en el rendimiento, 
+lo que permite optimizar el código y mejorar la experiencia del usuario.
+°Comparación: Proporciona una base para comparar diferentes algoritmos y estructuras 
+de datos, ayudando a tomar decisiones informadas sobre cuál utilizar en un contexto particular.
