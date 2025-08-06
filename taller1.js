@@ -27,8 +27,23 @@ class ListaDoble {
             this.head = nuevoNodo;             
         }
     }
+    // Agregar al final
+    agregarAlFinal(dato) {
+          const nuevoNodo = new Nodo(dato);
+        if (!this.head) {
+            this.head = nuevoNodo;
+            this.tail = nuevoNodo;
+        } else {
+            nuevoNodo.anterior = this.tail;
+            this.tail.siguiente = nuevoNodo;
+            this.tail = nuevoNodo;
+        }        
+    }
+
 }
-// Se agrega un nodo al inicio de la lista doble
+
 const lista = new ListaDoble();// Creación de una instancia de ListaDoble y agregar un nodo al inicio
-lista.agregarAlInicio(10); // Agregamos el primer nodo con el dato 10
+lista.agregarAlInicio(10); // Se agrega un nodo al inicio de la lista doble
 console.log("El dato del primer nodo es:", lista.head.dato); // Verificamos el dato del primer nodo
+lista.agregarAlFinal(20); // Se agrega un nodo al final de la lista doble
+console.log("El dato del segundo nodo es:", lista.tail.dato); // Verificamos el dato del segundo nodo
