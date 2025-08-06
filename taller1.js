@@ -84,6 +84,20 @@ class ListaDoble {
         }
         this.longitud--;
     }
+    // Eliminar el último nodo
+    eliminarUltimoNodo() {
+        if (!this.tail) {
+            console.log("La lista está vacía. No se puede eliminar el último nodo.");
+            return;
+        }
+        this.tail = this.tail.anterior;
+        if (this.tail) {
+            this.tail.siguiente = null;
+        } else {
+            this.head = null; // Si la lista queda vacía
+        }
+        this.longitud--;
+    }
 }
 
 
@@ -96,3 +110,5 @@ lista.insertarEnIndice(15, 1); // Insertamos un nodo con dato 15 en el índice 1
 console.log("El dato del nodo en el índice 1 es:", lista.head.siguiente.dato); // Verificamos el dato del nodo en el índice 1
 lista.eliminarPrimerNodo(); // Eliminamos el primer nodo
 console.log("Después de eliminar el primer nodo, el nuevo primer nodo es:", lista.head ? lista.head.dato : "La lista está vacía"); // Verificamos el nuevo primer nodo
+lista.eliminarUltimoNodo();// Eliminar el último nodo
+console.log("Lista después de eliminar el último nodo es:", lista.tail ? lista.tail.dato : "La lista está vacía"); // Verificamos el nuevo último nodo
