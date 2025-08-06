@@ -98,6 +98,32 @@ class ListaDoble {
         }
         this.longitud--;
     }
+// Eliminar un nodo en un índice específico
+    eliminarEnIndice(indice) {
+        if (indice < 0 || indice >= this.longitud) {
+            console.error("Índice fuera de rango");
+            return;
+        }
+
+        if (indice === 0) {
+            this.eliminarPrimerNodo();
+            return;
+        }
+
+        if (indice === this.longitud - 1) {
+            this.eliminarUltimoNodo();
+            return;
+        }
+
+        let actual = this.head;
+        for (let i = 0; i < indice; i++) {
+            actual = actual.siguiente;
+        }
+
+        actual.anterior.siguiente = actual.siguiente;
+        actual.siguiente.anterior = actual.anterior;
+        this.longitud--;
+    }
 }
 
 
@@ -110,5 +136,7 @@ lista.insertarEnIndice(15, 1); // Insertamos un nodo con dato 15 en el índice 1
 console.log("El dato del nodo en el índice 1 es:", lista.head.siguiente.dato); // Verificamos el dato del nodo en el índice 1
 lista.eliminarPrimerNodo(); // Eliminamos el primer nodo
 console.log("Después de eliminar el primer nodo, el nuevo primer nodo es:", lista.head ? lista.head.dato : "La lista está vacía"); // Verificamos el nuevo primer nodo
+lista.eliminarEnIndice(0);// Eliminar el nodo en el índice 0
+console.log("Lista después de eliminar el nodo en el índice 0 es:", lista.head ? lista.head.dato : "La lista está vacía"); // Verificamos el nuevo primer nodo
 lista.eliminarUltimoNodo();// Eliminar el último nodo
 console.log("Lista después de eliminar el último nodo es:", lista.tail ? lista.tail.dato : "La lista está vacía"); // Verificamos el nuevo último nodo
